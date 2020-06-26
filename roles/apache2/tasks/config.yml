@@ -1,0 +1,5 @@
+---
+- name: "[CONFIG] Prepare VirtualHost"
+  template:
+    src: vhost.conf.j2
+    dest: "{{ sites_enabled }}/000-default.conf"

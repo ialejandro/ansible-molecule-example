@@ -1,0 +1,7 @@
+<VirtualHost *:80>
+	ServerAdmin root@localhost
+	DocumentRoot /var/www/html
+
+	ErrorLog {{ logdir }}/default_error.log
+	CustomLog {{ logdir }}/default_access.log forwarded
+</VirtualHost>

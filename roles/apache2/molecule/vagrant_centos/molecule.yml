@@ -1,0 +1,22 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    name: libvirt
+platforms:
+  - name: apache-server
+    box: centos/8
+    instance_raw_config_args:
+      - "vm.network 'forwarded_port', guest: 80, host: 80"
+  - name: apache-client
+    box: centos/8
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+verifier:
+  name: ansible
+  lint:
+    name: ansible-lint

@@ -1,0 +1,10 @@
+---
+- name: "[CONFIG] Load variables file"
+  include_vars:
+    file: "{{ ansible_distribution | lower }}.yml"
+
+- import_tasks: install.yml
+  tags: ['install']
+
+- import_tasks: config.yml
+  tags: ['config']

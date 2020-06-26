@@ -1,0 +1,23 @@
+---
+# This is an example playbook to execute Ansible tests.
+- hosts: all
+  gather_facts: yes
+
+- name: Verify
+  hosts: client
+  vars:
+    wait_seconds: 120
+  tasks:
+  - name: petición al servidor
+    uri:
+      url: "http://172.17.0.1"
+    failed_when: false
+    register: server_result
+
+  - debug: var=server_result
+
+  - name: "response status code"
+    assert:
+      that:
+      - server_result.status == 200
+      success_msg: "'server_result.status' es 200"

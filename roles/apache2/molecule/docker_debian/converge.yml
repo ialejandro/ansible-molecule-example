@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: server
+  gather_facts: yes
+  tasks:
+    - name: "Include apache2"
+      include_role:
+        name: "apache2"

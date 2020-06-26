@@ -1,0 +1,4 @@
+---
+sites_enabled: '/etc/apache2/sites-enabled'
+logdir: '/var/log/apache2'
+package: apache2

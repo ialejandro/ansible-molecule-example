@@ -1,0 +1,4 @@
+---
+sites_enabled: '/etc/httpd/conf.d'
+logdir: '/var/log/httpd'
+package: httpd
