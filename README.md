@@ -10,7 +10,13 @@
 
 ```
 git clone git@github.com:ialejandro/ansible-molecule-example.git
-cd ansible-molecule-example/roles/apache2
+
+# requirements
+cd ansible-molecule-example/pipenv
+pipenv sync && pipenv shell
+
+# testing
+cd ../roles/apache2
 
 # list scenarios
 molecule list
